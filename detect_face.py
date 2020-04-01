@@ -14,7 +14,7 @@ def detect_faces(image_path):
 	faces = FACE_CASCADE.detectMultiScale(image_grey,scaleFactor=1.16,minNeighbors=5,minSize=(25,25),flags=0)
 
 	for x,y,w,h in faces:
-	    sub_img=image[y-10:y+h+10,x-10:x+w+10]
+	    sub_img=image[y-25:y+h+25,x-25:x+w+25]
 	    os.chdir("Extracted")
 	    cv2.imwrite(str(randint(0,10000))+".jpg",sub_img)
 	    os.chdir("../")
